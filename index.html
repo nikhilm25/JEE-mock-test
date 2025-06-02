@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JEE Mock Test Platform</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Top Header Bar -->
+    <div class="top-header">
+        <div class="header-container">
+            <div class="logo-section">
+                <div class="portal-info">
+                    <div class="portal-title">JEE Mock Test Platform</div>
+                    <div class="portal-subtitle">Practice Tests for JEE Preparation</div>
+                </div>
+            </div>
+            <div class="repo-section">
+                <a href="https://github.com/your-repo/jee-mock-test" target="_blank" class="repo-link">
+                    📚 Contribute on GitHub
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Home Page -->
+    <div id="homePage" class="home-page">
+        <div class="home-container">
+            <div class="welcome-section">
+                <h1>Welcome to JEE Mock Test Platform</h1>
+                <p>Choose your subject and start practicing for JEE with our comprehensive mock tests</p>
+            </div>
+
+            <div class="test-selection">
+                <div class="mixed-test-section">
+                    <h3>Full Test</h3>
+                    <p>Complete JEE practice test with questions from all subjects</p>
+                    <button class="mixed-test-btn" onclick="showFullTestOptions()">
+                        View Full Test Options
+                    </button>
+                </div>
+
+                <h2>Select a Subject Test</h2>
+                <div class="test-cards">
+                    <div class="test-card" onclick="showSubjectTestOptions('mathematics')">
+                        <div class="test-icon">📊</div>
+                        <h3>Mathematics</h3>
+                        <p>30 Questions • 120 Minutes</p>
+                        <div class="test-topics">
+                            <span class="topic">Algebra</span>
+                            <span class="topic">Calculus</span>
+                            <span class="topic">Geometry</span>
+                            <span class="topic">Trigonometry</span>
+                        </div>
+                        <button class="start-test-btn">View Test Options</button>
+                    </div>
+
+                    <div class="test-card" onclick="showSubjectTestOptions('physics')">
+                        <div class="test-icon">⚡</div>
+                        <h3>Physics</h3>
+                        <p>30 Questions • 120 Minutes</p>
+                        <div class="test-topics">
+                            <span class="topic">Mechanics</span>
+                            <span class="topic">Thermodynamics</span>
+                            <span class="topic">Optics</span>
+                            <span class="topic">Electricity</span>
+                        </div>
+                        <button class="start-test-btn">View Test Options</button>
+                    </div>
+
+                    <div class="test-card" onclick="showSubjectTestOptions('chemistry')">
+                        <div class="test-icon">🧪</div>
+                        <h3>Chemistry</h3>
+                        <p>30 Questions • 120 Minutes</p>
+                        <div class="test-topics">
+                            <span class="topic">Organic</span>
+                            <span class="topic">Inorganic</span>
+                            <span class="topic">Physical</span>
+                            <span class="topic">Atomic Structure</span>
+                        </div>
+                        <button class="start-test-btn">View Test Options</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Full Test Selection Page -->
+    <div id="testSelectionPage" class="test-selection-page" style="display: none;">
+        <div class="test-selection-container">
+            <div class="page-header">
+                <button class="back-btn" onclick="goBackToHome()">
+                    ← Back to Home
+                </button>
+                <h1>Select Full Test</h1>
+                <p>Choose from our comprehensive JEE practice tests</p>
+            </div>
+
+            <div class="available-tests">
+                <div class="test-option-card" onclick="startFullTest('jee-main-2024')">
+                    <div class="test-badge">RECOMMENDED</div>
+                    <div class="test-details">
+                        <h3>JEE Main Practice Test 2024</h3>
+                        <div class="test-meta">
+                            <span class="meta-item">📊 90 Questions</span>
+                            <span class="meta-item">⏱️ 180 Minutes</span>
+                            <span class="meta-item">🎯 +4/-1 Marking</span>
+                        </div>
+                        <div class="subject-breakdown">
+                            <div class="subject-item">
+                                <span class="subject-name">Mathematics</span>
+                                <span class="question-count">30 Questions</span>
+                            </div>
+                            <div class="subject-item">
+                                <span class="subject-name">Physics</span>
+                                <span class="question-count">30 Questions</span>
+                            </div>
+                            <div class="subject-item">
+                                <span class="subject-name">Chemistry</span>
+                                <span class="question-count">30 Questions</span>
+                            </div>
+                        </div>
+                        <p class="test-description">
+                            A comprehensive practice test designed to simulate the actual JEE Main exam pattern with questions covering all important topics.
+                        </p>
+                    </div>
+                    <button class="select-test-btn">Start This Test</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mathematics Test Selection Page -->
+    <div id="mathTestSelectionPage" class="test-selection-page" style="display: none;">
+        <div class="test-selection-container">
+            <div class="page-header">
+                <button class="back-btn" onclick="goBackToHome()">
+                    ← Back to Home
+                </button>
+                <h1>Mathematics Practice Tests</h1>
+                <p>Choose from our Mathematics practice tests</p>
+            </div>
+
+            <div class="available-tests">
+                <div class="test-option-card" onclick="startSubjectTest('mathematics', 'math-practice-2024')">
+                    <div class="test-badge">RECOMMENDED</div>
+                    <div class="test-details">
+                        <h3>Mathematics Practice Test 2024</h3>
+                        <div class="test-meta">
+                            <span class="meta-item">📊 30 Questions</span>
+                            <span class="meta-item">⏱️ 120 Minutes</span>
+                            <span class="meta-item">🎯 +4/-1 Marking</span>
+                        </div>
+                        <div class="subject-breakdown">
+                            <div class="subject-item">
+                                <span class="subject-name">Algebra</span>
+                                <span class="question-count">8 Questions</span>
+                            </div>
+                            <div class="subject-item">
+                                <span class="subject-name">Calculus</span>
+                                <span class="question-count">8 Questions</span>
+                            </div>
+                            <div class="subject-item">
+                                <span class="subject-name">Geometry</span>
+                                <span class="question-count">7 Questions</span>
+                            </div>
+                            <div class="subject-item">
+                                <span class="subject-name">Trigonometry</span>
+                                <span class="question-count">7 Questions</span>
+                            </div>
+                        </div>
+                        <p class="test-description">
+                            A comprehensive Mathematics practice test covering all important topics from the JEE Main syllabus.
+                        </p>
+                    </div>
+                    <button class="select-test-btn">Start This Test</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Physics Test Selection Page -->
+    <div id="physicsTestSelectionPage" class="test-selection-page" style="display: none;">
+        <div class="test-selection-container">
+            <div class="page-header">
+                <button class="back-btn" onclick="goBackToHome()">
+                    ← Back to Home
+                </button>
+                <h1>Physics Practice Tests</h1>
+                <p>Choose from our Physics practice tests</p>
+            </div>
+
+            <div class="available-tests">
+                <div class="test-option-card" onclick="startSubjectTest('physics', 'physics-practice-2024')">
+                    <div class="test-badge">RECOMMENDED</div>
+                    <div class="test-details">
+                        <h3>Physics Practice Test 2024</h3>
+                        <div class="test-meta">
+                            <span class="meta-item">📊 30 Questions</span>
+                            <span class="meta-item">⏱️ 120 Minutes</span>
+                            <span class="meta-item">🎯 +4/-1 Marking</span>
+                        </div>
+                        <div class="subject-breakdown">
+                            <div class="subject-item">
+                                <span class="subject-name">Mechanics</span>
+                                <span class="question-count">8 Questions</span>
+                            </div>
+                            <div class="subject-item">
+                                <span class="subject-name">Thermodynamics</span>
+                                <span class="question-count">7 Questions</span>
+                            </div>
+                            <div class="subject-item">
+                                <span class="subject-name">Optics</span>
+                                <span class="question-count">8 Questions</span>
+                            </div>
+                            <div class="subject-item">
+                                <span class="subject-name">Electricity</span>
+                                <span class="question-count">7 Questions</span>
+                            </div>
+                        </div>
+                        <p class="test-description">
+                            A comprehensive Physics practice test covering all important topics from the JEE Main syllabus.
+                        </p>
+                    </div>
+                    <button class="select-test-btn">Start This Test</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chemistry Test Selection Page -->
+    <div id="chemistryTestSelectionPage" class="test-selection-page" style="display: none;">
+        <div class="test-selection-container">
+            <div class="page-header">
+                <button class="back-btn" onclick="goBackToHome()">
+                    ← Back to Home
+                </button>
+                <h1>Chemistry Practice Tests</h1>
+                <p>Choose from our Chemistry practice tests</p>
+            </div>
+
+            <div class="available-tests">
+                <div class="test-option-card" onclick="startSubjectTest('chemistry', 'chemistry-practice-2024')">
+                    <div class="test-badge">RECOMMENDED</div>
+                    <div class="test-details">
+                        <h3>Chemistry Practice Test 2024</h3>
+                        <div class="test-meta">
+                            <span class="meta-item">📊 30 Questions</span>
+                            <span class="meta-item">⏱️ 120 Minutes</span>
+                            <span class="meta-item">🎯 +4/-1 Marking</span>
+                        </div>
+                        <div class="subject-breakdown">
+                            <div class="subject-item">
+                                <span class="subject-name">Organic Chemistry</span>
+                                <span class="question-count">10 Questions</span>
+                            </div>
+                            <div class="subject-item">
+                                <span class="subject-name">Inorganic Chemistry</span>
+                                <span class="question-count">10 Questions</span>
+                            </div>
+                            <div class="subject-item">
+                                <span class="subject-name">Physical Chemistry</span>
+                                <span class="question-count">10 Questions</span>
+                            </div>
+                        </div>
+                        <p class="test-description">
+                            A comprehensive Chemistry practice test covering all important topics from the JEE Main syllabus.
+                        </p>
+                    </div>
+                    <button class="select-test-btn">Start This Test</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Subject Navigation Bar (Hidden initially) -->
+    <div class="nav-bar" id="navBar" style="display: none;">
+        <div class="nav-container">
+            <div class="nav-left">
+                <button class="back-home-btn" onclick="goBackToHome()">
+                    ← Back to Home
+                </button>
+            </div>
+            <div class="subject-tabs">
+                <button class="subject-tab active" onclick="switchSubject('mathematics')" id="math-tab">
+                    Mathematics
+                </button>
+                <button class="subject-tab" onclick="switchSubject('physics')" id="physics-tab">
+                    Physics
+                </button>
+                <button class="subject-tab" onclick="switchSubject('chemistry')" id="chemistry-tab">
+                    Chemistry
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Assessment Interface (Hidden initially) -->
+    <div id="dashboard" class="assessment-container" style="display: none;">
+        <!-- Assessment Header -->
+        <div class="assessment-header">
+            <div class="test-title">
+                <h2 id="subjectTitle">Mathematics Practice Test</h2>
+                <div class="test-info-bar">
+                    <span class="info-item">Duration: 180 minutes</span>
+                    <span class="info-separator">|</span>
+                    <span class="info-item">Questions: 30</span>
+                    <span class="info-separator">|</span>
+                    <span class="info-item">Marks: +4/-1</span>
+                </div>
+            </div>
+            <div class="timer-container">
+                <div class="timer-label">Time Remaining</div>
+                <div class="timer-display" id="timer">02:59:59</div>
+                <div class="timer-warning" id="timerWarning" style="display: none;">
+                    ⚠️ Less than 5 minutes remaining!
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="main-content">
+            <!-- Left Panel - Question Content -->
+            <div class="left-panel question-content-panel">
+                <div class="question-container">
+                    <div class="question-header">
+                        <div class="question-info">
+                            <span class="question-number">Question <span id="currentQuestionNumber">1</span></span>
+                            <span class="question-total">of <span id="totalQuestionsDisplay">30</span></span>
+                        </div>
+                        <div class="question-controls">
+                            <button class="btn-control" onclick="markForReview()" id="markBtn">
+                                Mark for Review
+                            </button>
+                            <button class="btn-control" onclick="clearResponse()">
+                                Clear Response
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="question-content">
+                        <div class="question-text" id="questionText">
+                            <!-- Question content loaded by JavaScript -->
+                        </div>
+
+                        <div class="options-section" id="optionsContainer">
+                            <!-- Options loaded by JavaScript -->
+                        </div>
+                    </div>
+
+                    <div class="navigation-bar">
+                        <div class="nav-left">
+                            <button class="btn-nav btn-prev" id="prevBtn" onclick="previousQuestion()">
+                                ← Previous
+                            </button>
+                        </div>
+                        <div class="nav-center">
+                            <button class="btn-nav btn-save" onclick="saveProgress()">
+                                Save & Next
+                            </button>
+                        </div>
+                        <div class="nav-right">
+                            <button class="btn-nav btn-next" id="nextBtn" onclick="nextQuestion()">
+                                Next →
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Panel - Question Navigation -->
+            <div class="right-panel question-palette-panel">
+                <div class="section-card">
+                    <div class="section-header">
+                        <h3>Question Palette</h3>
+                    </div>
+                    <div class="palette-legend">
+                        <div class="legend-row">
+                            <span class="legend-box not-visited"></span>
+                            <span class="legend-text">Not Visited</span>
+                        </div>
+                        <div class="legend-row">
+                            <span class="legend-box not-answered"></span>
+                            <span class="legend-text">Not Answered</span>
+                        </div>
+                        <div class="legend-row">
+                            <span class="legend-box answered"></span>
+                            <span class="legend-text">Answered</span>
+                        </div>
+                        <div class="legend-row">
+                            <span class="legend-box marked"></span>
+                            <span class="legend-text">Marked for Review</span>
+                        </div>
+                    </div>
+                    <div class="question-grid" id="paletteGrid">
+                        <!-- Generated by JavaScript -->
+                    </div>
+                </div>
+
+                <div class="section-card">
+                    <div class="action-buttons">
+                        <button class="btn-action btn-submit" onclick="submitTest()">
+                            Submit Test
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Instructions Modal -->
+    <div id="instructionsModal" class="modal-overlay">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h2>Test Instructions</h2>
+            </div>
+            <div class="modal-content">
+                <div class="instructions-section">
+                    <h3>General Instructions</h3>
+                    <ul>
+                        <li>Total duration of the test is 180 minutes</li>
+                        <li>The test contains 30 questions</li>
+                        <li>Each question carries 4 marks for correct answer</li>
+                        <li>1 mark will be deducted for each wrong answer</li>
+                        <li>No marks deducted for unattempted questions</li>
+                        <li>You can switch between subjects anytime</li>
+                    </ul>
+                </div>
+                <div class="instructions-section">
+                    <h3>Navigation Instructions</h3>
+                    <ul>
+                        <li>Use the question palette to navigate between questions</li>
+                        <li>You can mark questions for review and come back later</li>
+                        <li>Use 'Save & Next' to save your answer and move to next question</li>
+                        <li>Click 'Submit Test' when you have completed all questions</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-primary" onclick="startTest()">
+                    I understand. Start Test
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Submit Modal -->
+    <div id="submitModal" class="modal-overlay">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h2>Submit Test</h2>
+            </div>
+            <div class="modal-content">
+                <p>Are you sure you want to submit the test? Once submitted, you cannot make any changes.</p>
+                <div class="submission-summary">
+                    <div class="summary-row">
+                        <span>Questions Attempted:</span>
+                        <span id="attemptedCount">0</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Questions Not Attempted:</span>
+                        <span id="notAttemptedCount">30</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Questions Marked for Review:</span>
+                        <span id="markedCount">0</span>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary" onclick="closeSubmitModal()">Cancel</button>
+                <button class="btn-danger" onclick="confirmSubmit()">Submit Test</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
